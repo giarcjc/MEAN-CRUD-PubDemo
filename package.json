@@ -1,7 +1,11 @@
 {
-	"name": "scotch-do",
+	"name": "MEAN-CRUD-PubDemo",
+	"author": {
+    "name": "Chris Craig",
+    "email": "chris@cjcraig.com"
+  },
 	"version": "0.0.1",
-	"description": "Angular Node to-do demo",
+	"description": "MongoDB, Express, Angular and Node CRUD Demo",
 	"main"         : "server.js",
 	"dependencies": {
 		 "express"    : "~3.4.4",
