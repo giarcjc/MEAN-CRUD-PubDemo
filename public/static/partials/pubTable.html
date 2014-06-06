@@ -1,0 +1,21 @@
+<div class="table-responsive">
+			<h3>Total Publications: <span class="label label-info">{{ pubs.length }}</span></h3>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Date</th>
+                  <th>Description</th>
+                  <th>Delete</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+        
+              <tr ng-repeat="pub in pubs| filter: filter.title | orderBy:'title'" > 
+                <td id="{{pub._id}}">{{ pub.title }}</td><td>{{ pub.date }}</td><td>{{ pub.description }}</td><td><label class="checkbox"><input type="checkbox" ng-click="deletePub(pub._id)"></label></td>
+                  
+                  </tr>
+               </tbody> 
+           </table>    
+		</div>

@@ -1,0 +1,10 @@
+{
+	"name": "scotch-do",
+	"version": "0.0.1",
+	"description": "Angular Node to-do demo",
+	"main"         : "server.js",
+	"dependencies": {
+		 "express"    : "~3.4.4",
+  		  "mongoose"   : "~3.6.2"
+	}
+}

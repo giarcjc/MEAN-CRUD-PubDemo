@@ -1,0 +1,25 @@
+body {
+  padding-top: 50px;
+  
+}
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+.container {
+
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+ol,ul,li {
+  text-align: left;
+}
+
+
+
+div.ng-table-pager.ng-scope {
+display: none;}
+
+#pubTable {
+	margin: 0 50px; 
+}
