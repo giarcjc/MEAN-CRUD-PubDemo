@@ -1,0 +1,58 @@
+<div id="pub-form" class="row">
+			<div class="col-sm-4 col-sm-offset-2 text-center">
+				<form>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Publication Title" ng-model="formData.title">
+						<input type="text" class="form-control" placeholder="Publication Date" ng-model="formData.date">
+						<input type="text" class="form-control" placeholder="Publication Description" ng-model="formData.description">
+					</div>
+
+					<!-- createPub() WILL CREATE NEW Publications -->
+					<button type="submit" class="btn btn-primary" ng-click="createPub()">Add Publication</button>
+				</form>
+			</div>
+		</div>
+
+		
+
+	 <div id="pubTable" class="table-responsive">
+	 	<div class="row placeholders">
+		 <div class="col-xs-6 col-sm-3 placeholder">
+				<h3>Total Publications: <span class="label label-info">{{ pubs.length }}</span></h3>
+			</div>
+          	
+          	<div class="col-xs-6 col-sm-3 placeholder">
+            <!-- placeholder -->
+
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+            <!-- placeholder -->
+
+            </div>
+			
+            <div class="col-xs-6 col-sm-3 placeholder">
+            <h4>Filter Results</h4>
+				<input type="text" class="form-control" data-ng-model="filter.title" />
+            </div>
+         </div> 	   
+
+
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Date</th>
+                  <th>Description</th>
+                  <th>Delete</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+        
+              <tr ng-repeat="pub in pubs| filter: filter.title | orderBy:'title'" > 
+                <td id="{{pub._id}}">{{ pub.title }}</td><td>{{ pub.date }}</td><td>{{ pub.description }}</td><td><label class="checkbox"><input type="checkbox" ng-click="deletePub(pub._id)"></label></td>
+                  
+                  </tr>
+               </tbody> 
+           </table>    
+		</div>

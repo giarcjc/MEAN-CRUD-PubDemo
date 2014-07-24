@@ -1,3 +1,5 @@
+'use strict';
+
 var scratchApp = angular.module('scratchApp', ['ui.router']);
 
 scratchApp.run(['$rootScope', '$state', '$stateParams',
@@ -8,11 +10,11 @@ scratchApp.run(['$rootScope', '$state', '$stateParams',
 
 scratchApp.config(function($stateProvider, $urlRouterProvider) {
     
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/home');
     
     $stateProvider
         
-        // need to finish this...
+       
          .state('home', {
             url: '/home',
             templateUrl: '/static/partials/partial-home.html'
@@ -22,9 +24,23 @@ scratchApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/about',
             templateUrl: '/static/partials/partial-about.html'
         })
+
+         // need to add tests
+        // .state('test', {
+        // 	url:'/test',
+        // 	templateUrl: '/static/test/jasmine/SpecRunner.html'
+        // })
            
 });
 
+// scratchApp.factory('UserFactory', function ($resource){
+// 	return $resource('Users/users.json')
+// });
+
+// scratchApp.controller('testCntr', function ($scope, UserFactory){
+// 	$scope.text = 'Hello World';
+// 	$scope.users = UserFactory.get();
+// });
 
 scratchApp.controller('mainController', function ($scope, $http){
 	$scope.formData = {};
